@@ -1,0 +1,7 @@
+librosa==0.7.2
+musdb==0.3.1
+museval==0.3.0
+numpy==1.18.1
+pandas==0.25.3
+simplejson==3.17.0
+torch==1.4.0
