@@ -70,11 +70,9 @@ class GroupNormStatic(nn.Module):
     """
     Group normalization layer with an independent scale and bias factor for each instrument
     """
-    def __init__(self, num_groups, num_channels, eps=1e-8):
+    def __init__(self, _, __, num_groups, num_channels, eps=1e-8):
         """
         Arguments:
-            E_1 {int} -- Dimension of the instrument embedding
-            E_2 {int} -- Dimension of the instrument embedding bottleneck
             num_groups {int} -- Number of normalized groups
             num_channels {int} -- Number of channels
 
