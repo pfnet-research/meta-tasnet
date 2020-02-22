@@ -82,7 +82,7 @@ class Conv1dStatic(nn.Module):
     """
     1D convolution with an independent kernel for each instrument
     """
-    def __init__(self, in_channels, out_channels, kernel_size, stride=1, padding=0, dilation=1, groups=1, bias=False):
+    def __init__(self, _, __, in_channels, out_channels, kernel_size, stride=1, padding=0, dilation=1, groups=1, bias=False):
         """
         Arguments:
             in_channels {int} -- Number of channels of the input
