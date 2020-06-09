@@ -112,7 +112,18 @@ state = torch.load("best_model.pt")  # load checkpoint
 network = MultiTasNet(state["args"]).to(device)  # initialize the model
 network.load_state_dict(state['state_dict'])  # load the pretrained weights
 ```
+<br>
 
+## Cite
+
+```
+@inproceedings={meta-tasnet:2020,
+    title={Meta-learning Extractors for Music Source Separation},
+    author={David Samuel and Aditya Ganeshan and Jason Naradowsky},
+    booktitle={IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+    year={2020},
+}
+```
 <br>
 
 ## License
