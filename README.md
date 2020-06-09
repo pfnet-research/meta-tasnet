@@ -121,6 +121,7 @@ network.load_state_dict(state['state_dict'])  # load the pretrained weights
     title={Meta-learning Extractors for Music Source Separation},
     author={David Samuel and Aditya Ganeshan and Jason Naradowsky},
     booktitle={IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+    pages={816-820},
     year={2020},
 }
 ```
