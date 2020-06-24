@@ -74,7 +74,8 @@ class TasNet(nn.Module):
             separated_gold_latents = None
 
         instruments = torch.arange(0, self.C, device=mix_latent.device)  # shape: (4)
-        instruments = self.instrument_embedding(instruments)  # shape: (4, E)
+        if self.instrument_embedding is not None:
+            instruments = self.instrument_embedding(instruments)  # shape: (4, E)
 
         # generate masks
         mask_input = self.dropout(mix_latents.view(batch_size*self.C, self.N, -1).unsqueeze(-1)).squeeze(-1).view(batch_size, self.C, self.N, -1)  # shape: (B, 4, N, T')
@@ -121,8 +122,9 @@ class TasNet(nn.Module):
             mask_input = x  # shape: (1, 4, N, T')
         del partial_input
 
-        instruments = torch.arange(0, self.C, device=x.device)  # shape: (5)
-        instruments = self.instrument_embedding(instruments)  # shape: (5, E)
+        instruments = torch.arange(0, self.C, device=x.device)  # shape: (4)
+        if self.instrument_embedding is not None:
+            instruments = self.instrument_embedding(instruments)  # shape: (4, E)
 
         masks = self.mask(instruments, mask_input)  # shape: (1, 4, N, T')
         del mask_input
